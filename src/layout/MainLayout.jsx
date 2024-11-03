@@ -1,14 +1,21 @@
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-
 const MainLayout = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div className="bg-base-200">
+      <div>
+        <Navbar></Navbar>
+      </div>
+      <div className="min-h-[calc(100vh-426px)] w-11/12 mx-auto">
+        <Outlet></Outlet>
+      </div>
+      <div className="bg-white">
+        <Footer></Footer>
+      </div>
+    </div>
+  );
 };
 
 export default MainLayout;
