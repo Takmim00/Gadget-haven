@@ -1,0 +1,155 @@
+[
+    {
+        "product_id": "P001",
+        "product_title": "Apple iPhone 15 Pro Max",
+        "product_image": "https://i.ibb.co.com/FVQBws7/Apple-i-Phone-15-Pro-max.jpg",
+        "category": "Phone",
+        "price": 1299,
+        "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+        "specification": [
+            "6.7-inch Super Retina XDR display",
+            "A17 Bionic chip",
+            "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+            "LiDAR Scanner",
+            "Up to 2TB storage"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "P002",
+        "product_title": "MacBook Pro 14-inch",
+        "product_image": "https://i.ibb.co.com/qFjvRdP/Mac-Book-Pro.png",
+        "category": "Laptops",
+        "price": 1999,
+        "description": "MacBook Pro with M2 chip for unmatched performance.",
+        "specification": [
+            "14-inch Liquid Retina XDR display",
+            "M2 Pro chip",
+            "16GB RAM",
+            "512GB SSD storage",
+            "Up to 17 hours battery life"
+        ],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "product_id": "P003",
+        "product_title": "Samsung Galaxy S23 Ultra",
+        "product_image": "https://i.ibb.co.com/jf1Z75f/Samsung-Galaxy-S23-Ultra.webp",
+        "category": "Phone",
+        "price": 1199,
+        "description": "Samsung Galaxy S23 Ultra with incredible camera and performance.",
+        "specification": [
+            "6.8-inch Dynamic AMOLED display",
+            "Snapdragon 8 Gen 2",
+            "256GB storage",
+            "200MP main camera",
+            "5000mAh battery"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "P004",
+        "product_title": "Dell XPS 13",
+        "product_image": "https://i.ibb.co.com/GPjQKD6/Dell-XPS-13.webp",
+        "category": "Laptops",
+        "price": 1299,
+        "description": "Dell XPS 13 with Intel i7 processor and sleek design.",
+        "specification": [
+            "13.4-inch FHD+ display",
+            "Intel Core i7",
+            "16GB RAM",
+            "512GB SSD",
+            "Up to 12 hours battery life"
+        ],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
+        "product_id": "P005",
+        "product_title": "Sony WH-1000XM5 Wireless Headphones",
+        "product_image": "https://i.ibb.co.com/bRjL1cK/Sony-WH-1000-XM5.jpg",
+        "category": "Accessories",
+        "price": 399,
+        "description": "Sony WH-1000XM5 with noise-canceling technology.",
+        "specification": [
+            "Over-Ear design",
+            "Up to 30 hours battery life",
+            "Bluetooth 5.2",
+            "Noise-Canceling",
+            "Comfort-fit design"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "P006",
+        "product_title": "Apple AirPods Pro (2nd Generation)",
+        "product_image": "https://i.ibb.co.com/jLhxSHp/Apple-Air-Pods-Pro.jpg",
+        "category": "Accessories",
+        "price": 249,
+        "description": "Apple AirPods Pro with Active Noise Cancellation.",
+        "specification": [
+            "In-Ear design",
+            "Up to 6 hours battery life per charge",
+            "Active Noise Cancellation",
+            "Bluetooth 5.3",
+            "Sweat and water resistant"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "P007",
+        "product_title": "Anker PowerCore 10000 Portable Charger",
+        "product_image": "https://i.ibb.co.com/nM2r2Kz/Anker-Power-Core.jpg",
+        "category": "Accessories",
+        "price": 39,
+        "description": "Anker PowerCore 10000mAh portable charger for quick power on the go.",
+        "specification": [
+            "10000mAh capacity",
+            "High-speed charging",
+            "Compact design",
+            "Multiple device compatibility",
+            "LED indicator for battery level"
+        ],
+        "availability": true,
+        "rating": 4.4
+    },
+    {
+        "product_id": "P008",
+        "product_title": "Logitech MX Master 3S Wireless Mouse",
+        "product_image": "https://i.ibb.co.com/RgLsG0S/Logitech-MX-Master-3-S-Wireless-Mouse.jpg",
+        "category": "Accessories",
+        "price": 99,
+        "description": "Logitech MX Master 3S advanced wireless mouse with ergonomic design.",
+        "specification": [
+            "Wireless connectivity",
+            "Up to 70 days battery life",
+            "4000 DPI sensor",
+            "Ergonomic design",
+            "USB-C fast charging"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "product_id": "P009",
+        "product_title": "Apple Magic Keyboard",
+        "product_image": "https://i.ibb.co.com/ZxT3Hqf/Apple-Magic-Keyboard.jpg",
+        "category": "Accessories",
+        "price": 99,
+        "description": "Apple Magic Keyboard with wireless connectivity and rechargeable battery.",
+        "specification": [
+            "Wireless Bluetooth connectivity",
+            "Up to 1 month per charge",
+            "Compatible with macOS and iPadOS",
+            "Compact design",
+            "Rechargeable battery"
+        ],
+        "availability": false,
+        "rating": 4.3
+    }
+]
