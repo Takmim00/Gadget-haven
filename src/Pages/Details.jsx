@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { GiSelfLove } from "react-icons/gi";
+import { addToCart } from "../utils";
+
 
 const Details = () => {
   const data = useLoaderData();
@@ -20,7 +22,11 @@ const Details = () => {
     specification,
     rating
   } = gadgets;
+  
+  const handleAddCart = (gadgets)=>{
+    addToCart(gadgets)
 
+  }
   return (
     <div className="flex flex-col  bg-purple-600 pb-44  rounded-2xl text-white  relative mb-96 ">
       <div className="space-y-4 pt-16 mb-28">
@@ -96,7 +102,7 @@ const Details = () => {
 
             <div className="flex gap-6">
               <button
-
+                onClick={() => handleAddCart(gadgets)}
                 className="btn bg-purple-600 text-white rounded-full font-bold"
               >
                 Add To Cart <MdOutlineAddShoppingCart/>

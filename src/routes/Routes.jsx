@@ -43,7 +43,8 @@ const routes = createBrowserRouter([
         },
         {
             path:'/dashboard',
-            element:<Dashboard/>
+            element:<Dashboard/>,
+            loader: ()=> fetch('../gadgets.json')
         },
         {
           path:'/statistics',
