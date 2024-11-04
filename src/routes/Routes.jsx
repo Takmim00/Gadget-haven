@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Statistics from "../Pages/Statistics";
 import Dashboard from "../Pages/Dashboard";
 import CategoryCard from "../components/CategoryCard";
+import Details from "../Pages/Details";
 
 
 
@@ -29,14 +30,25 @@ const routes = createBrowserRouter([
               }
             ]
         },
+        
         {
-            path:'/statistics',
-            element:<Statistics/>
+            path:'/details',
+            element:<Details/>,
+            loader: ()=> fetch('../gadgets.json')
+        },
+        {
+            path:'/details/:id',
+            element:<Details/>,
+            loader: ()=> fetch('../gadgets.json')
         },
         {
             path:'/dashboard',
             element:<Dashboard/>
         },
+        {
+          path:'/statistics',
+          element:<Statistics/>
+      }
         
     ]
   },

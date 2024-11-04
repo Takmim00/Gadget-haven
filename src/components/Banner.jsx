@@ -4,7 +4,7 @@ import banner from "../assets/banner.jpg";
 const Banner = () => {
   return (
    <div>
-     <div className="flex flex-col text-center bg-[#9538E2] pb-52  rounded-2xl text-white  relative mb-96 ">
+     <div className="flex flex-col text-center bg-purple-600 pb-52  rounded-2xl text-white  relative mb-96 ">
       <div className="space-y-4 pt-16 mb-28">
         <h2 className="font-bold text-5xl text-center">
           Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories

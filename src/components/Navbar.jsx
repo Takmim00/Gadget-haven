@@ -1,6 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
-import { TiShoppingCart } from "react-icons/ti";
 import { GiSelfLove } from "react-icons/gi";
+import { TiShoppingCart } from "react-icons/ti";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -28,25 +28,42 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/statistics'>Statistics</NavLink></li>
-            <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+
+              <li>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to="/statistics">Statistics</NavLink>
+              </li>
             </ul>
           </div>
-          <Link className=" text-xl" to='/' >Gadget Heaven</Link>
+          <Link className=" text-xl" to="/">
+            Gadget Heaven
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/statistics'>Statistics</NavLink></li>
-            <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
-            
-            
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+            </li>
+            <li>
+              <NavLink to="/statistics">Statistics</NavLink>
+            </li>
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <p className="bg-white p-3 border rounded-full text-xl btn"><TiShoppingCart/></p>
-          <p className="bg-white p-3 border rounded-full text-xl btn"><GiSelfLove/></p>
+          <p className="bg-white p-3 border rounded-full text-xl btn">
+            <TiShoppingCart />
+          </p>
+          <p className="bg-white p-3 border rounded-full text-xl btn">
+            <GiSelfLove />
+          </p>
         </div>
       </div>
     </div>

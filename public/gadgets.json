@@ -1,6 +1,6 @@
 [
     {
-        "product_id": "P001",
+        "id": "P001",
         "product_title": "Apple iPhone 15 Pro Max",
         "product_image": "https://i.ibb.co.com/FVQBws7/Apple-i-Phone-15-Pro-max.jpg",
         "category": "Phone",
@@ -17,7 +17,7 @@
         "rating": 4.8
     },
     {
-        "product_id": "P002",
+        "id": "P002",
         "product_title": "MacBook Pro 14-inch",
         "product_image": "https://i.ibb.co.com/qFjvRdP/Mac-Book-Pro.png",
         "category": "Laptops",
@@ -34,7 +34,7 @@
         "rating": 4.9
     },
     {
-        "product_id": "P003",
+        "id": "P003",
         "product_title": "Samsung Galaxy S23 Ultra",
         "product_image": "https://i.ibb.co.com/jf1Z75f/Samsung-Galaxy-S23-Ultra.webp",
         "category": "Phone",
@@ -51,7 +51,7 @@
         "rating": 4.7
     },
     {
-        "product_id": "P004",
+        "id": "P004",
         "product_title": "Dell XPS 13",
         "product_image": "https://i.ibb.co.com/GPjQKD6/Dell-XPS-13.webp",
         "category": "Laptops",
@@ -68,7 +68,7 @@
         "rating": 4.5
     },
     {
-        "product_id": "P005",
+        "id": "P005",
         "product_title": "Sony WH-1000XM5 Wireless Headphones",
         "product_image": "https://i.ibb.co.com/bRjL1cK/Sony-WH-1000-XM5.jpg",
         "category": "Accessories",
@@ -85,7 +85,7 @@
         "rating": 4.6
     },
     {
-        "product_id": "P006",
+        "id": "P006",
         "product_title": "Apple AirPods Pro (2nd Generation)",
         "product_image": "https://i.ibb.co.com/jLhxSHp/Apple-Air-Pods-Pro.jpg",
         "category": "Accessories",
@@ -102,7 +102,7 @@
         "rating": 4.7
     },
     {
-        "product_id": "P007",
+        "id": "P007",
         "product_title": "Anker PowerCore 10000 Portable Charger",
         "product_image": "https://i.ibb.co.com/nM2r2Kz/Anker-Power-Core.jpg",
         "category": "Accessories",
@@ -119,7 +119,7 @@
         "rating": 4.4
     },
     {
-        "product_id": "P008",
+        "id": "P008",
         "product_title": "Logitech MX Master 3S Wireless Mouse",
         "product_image": "https://i.ibb.co.com/RgLsG0S/Logitech-MX-Master-3-S-Wireless-Mouse.jpg",
         "category": "Accessories",
@@ -136,7 +136,7 @@
         "rating": 4.6
     },
     {
-        "product_id": "P009",
+        "id": "P009",
         "product_title": "Apple Magic Keyboard",
         "product_image": "https://i.ibb.co.com/ZxT3Hqf/Apple-Magic-Keyboard.jpg",
         "category": "Accessories",
@@ -153,3 +153,4 @@
         "rating": 4.3
     }
 ]
+
