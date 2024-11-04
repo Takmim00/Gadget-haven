@@ -3,7 +3,8 @@ import banner from "../assets/banner.jpg";
 
 const Banner = () => {
   return (
-    <div className="flex flex-col text-center bg-[#9538E2] pb-52  rounded-2xl text-white  relative mb-96 ">
+   <div>
+     <div className="flex flex-col text-center bg-[#9538E2] pb-52  rounded-2xl text-white  relative mb-96 ">
       <div className="space-y-4 pt-16 mb-28">
         <h2 className="font-bold text-5xl text-center">
           Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories
@@ -25,6 +26,10 @@ const Banner = () => {
         </div>
       </div>
     </div>
+    <div className="text-center">
+      <h2 className="font-bold text-5xl mb-4">Explore Cutting-Edge Gadgets</h2>
+    </div>
+   </div>
     
   );
 };
