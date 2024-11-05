@@ -12,9 +12,15 @@ const Dashboard = () => {
 
   const [gadget, setGadget] = useState([]);
   const [wish, setWish] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const calculateTotalPrice = (cartItems) => {
+    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+    setTotalPrice(total);
+  };
   useEffect(() => {
     const gadgets = getAllCart();
     setGadget(gadgets);
+    calculateTotalPrice(gadgets);
   }, []);
   useEffect(() => {
     const wishes = getAllWishlist();
@@ -22,7 +28,9 @@ const Dashboard = () => {
   }, []);
   const handleRemoveCart = (id) => {
     removeFromCart(id);
-    setGadget(getAllCart());
+    const updatedCart = getAllCart();
+    setGadget(updatedCart);
+    calculateTotalPrice(updatedCart);
   };
   const handleRemoveWish = (id) => {
     removeFromWishlist(id);
@@ -69,10 +77,10 @@ const Dashboard = () => {
           <div className="flex flex-col ">
             <div className="flex justify-between py-4">
               <div>
-                <p>Cart</p>
+                <p className="font-bold text-xl">Cart</p>
               </div>
               <div className="flex items-center gap-3">
-                <p>Total Price</p>
+                <p className="font-bold text-xl">Total Price : ${totalPrice.toFixed(2)}</p>
                 <button className="p-3 border-2 rounded-full border-purple-600 text-purple-600 ">
                   Sort By Price
                 </button>
@@ -114,8 +122,8 @@ const Dashboard = () => {
           </div>
         ) : (
           <div className="flex flex-col">
-            <div>
-              <p>WishList</p>
+            <div className="py-4">
+              <p className="font-bold text-xl">WishList</p>
             </div>
             <div className="space-y-4 ">
               {wish.map((items, idx) => (
