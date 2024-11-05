@@ -151,6 +151,40 @@
         ],
         "availability": false,
         "rating": 4.3
+    },
+    {
+        "id": "P010",
+        "product_title": "Apple Watch Series 8",
+        "product_image": "https://i.ibb.co.com/hMN6yFC/Apple-Watch-Series-8.jpg",
+        "category": "Smart watch",
+        "price": 399,
+        "description": "Apple Watch Series 8 with advanced health tracking features.",
+        "specification": [
+            "Always-On Retina display",
+            "Heart rate and ECG monitoring",
+            "Sleep tracking",
+            "Water resistant",
+            "Up to 18 hours battery life"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "P011",
+        "product_title": "Samsung Galaxy Watch 5",
+        "product_image": "https://i.ibb.co.com/cy41QLt/galaxy-watch-5.webp",
+        "category": "Smart watch",
+        "price": 329,
+        "description": "Samsung Galaxy Watch 5 with fitness tracking and health monitoring.",
+        "specification": [
+            "1.4-inch Super AMOLED display",
+            "Body composition analysis",
+            "Sleep coaching",
+            "Water resistant",
+            "Up to 40 hours battery life"
+        ],
+        "availability": true,
+        "rating": 4.6
     }
 ]
 

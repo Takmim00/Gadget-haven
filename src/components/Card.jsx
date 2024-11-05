@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ gadget }) => {
   const { product_image, product_title, price, id } = gadget || {};
+  
   return (
     <div className="card bg-base-100  shadow-xl">
       <figure className="px-10 pt-10">
