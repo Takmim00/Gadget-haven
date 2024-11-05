@@ -6,6 +6,8 @@ import {
   removeFromWishlist,
 } from "../utils";
 import { CiCircleRemove } from "react-icons/ci";
+import { FaSortNumericDownAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("cart");
@@ -17,6 +19,13 @@ const Dashboard = () => {
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
     setTotalPrice(total);
   };
+  const handleSort = sortBy => {
+    if (sortBy == 'price') {
+      
+      const sorted = [...gadget].sort((a, b) => b.price - a.price)
+      setGadget(sorted)
+    }
+  }
   useEffect(() => {
     const gadgets = getAllCart();
     setGadget(gadgets);
@@ -72,7 +81,7 @@ const Dashboard = () => {
         </div>
       </div>
       {/* Display Items Based on Active Tab */}
-      <div className="">
+      <div className="my-4">
         {activeTab === "cart" ? (
           <div className="flex flex-col ">
             <div className="flex justify-between py-4">
@@ -81,10 +90,11 @@ const Dashboard = () => {
               </div>
               <div className="flex items-center gap-3">
                 <p className="font-bold text-xl">Total Price : ${totalPrice.toFixed(2)}</p>
-                <button className="p-3 border-2 rounded-full border-purple-600 text-purple-600 ">
-                  Sort By Price
+                <button  onClick={()=> handleSort('price')}
+                 className="p-3 btn border-2 rounded-full hover:bg-purple-600 hover:text-white border-purple-600 text-purple-600 flex items-center gap-3 font-semibold ">
+                  Sort By Price <FaSortNumericDownAlt/>
                 </button>
-                <button className="p-3 border-2 rounded-full border-purple-600 text-purple-600 ">
+                <button className="p-3 btn border-2 rounded-full bg-purple-600 text-white border-purple-600  ">
                   Purchase
                 </button>
               </div>
