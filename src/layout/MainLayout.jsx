@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
   const location = useLocation();
-  const backgroundColor = location.pathname === "/" ? "#9333ea" : "#e5e7eb";
+  const backgroundColor = location.pathname === "/" ? "#9333ea " : "#e5e7eb ";
   return (
     <div className="bg-gray-200">
       <Toaster />

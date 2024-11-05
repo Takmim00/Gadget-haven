@@ -1,31 +1,51 @@
 import React, { useEffect, useState } from "react";
+
+import { CiCircleRemove } from "react-icons/ci";
+import { FaSortNumericDownAlt } from "react-icons/fa";
 import {
   getAllCart,
   getAllWishlist,
   removeFromCart,
   removeFromWishlist,
 } from "../utils";
-import { CiCircleRemove } from "react-icons/ci";
-import { FaSortNumericDownAlt } from "react-icons/fa";
 
+import { useNavigate } from "react-router-dom";
+import modalImg from "../assets/Group.png";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("cart");
 
   const [gadget, setGadget] = useState([]);
   const [wish, setWish] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [modalTotalPrice, setModalTotalPrice] = useState(0);
+
+  const handlePurchase = () => {
+    if (gadget.length > 0) {
+      const currentTotal = totalPrice;
+      setModalTotalPrice(currentTotal);
+      setShowModal(true);
+      gadget.forEach((item) => removeFromCart(item.id));
+      setGadget([]);
+      setTotalPrice(0);
+    }
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate("/");
+  };
   const calculateTotalPrice = (cartItems) => {
     const total = cartItems.reduce((sum, item) => sum + item.price, 0);
     setTotalPrice(total);
   };
-  const handleSort = sortBy => {
-    if (sortBy == 'price') {
-      
-      const sorted = [...gadget].sort((a, b) => b.price - a.price)
-      setGadget(sorted)
+  const handleSort = (sortBy) => {
+    if (sortBy == "price") {
+      const sorted = [...gadget].sort((a, b) => b.price - a.price);
+      setGadget(sorted);
     }
-  }
+  };
   useEffect(() => {
     const gadgets = getAllCart();
     setGadget(gadgets);
@@ -89,12 +109,20 @@ const Dashboard = () => {
                 <p className="font-bold text-xl">Cart</p>
               </div>
               <div className="flex items-center gap-3">
-                <p className="font-bold text-xl">Total Price : ${totalPrice.toFixed(2)}</p>
-                <button  onClick={()=> handleSort('price')}
-                 className="p-3 btn border-2 rounded-full hover:bg-purple-600 hover:text-white border-purple-600 text-purple-600 flex items-center gap-3 font-semibold ">
-                  Sort By Price <FaSortNumericDownAlt/>
+                <p className="font-bold text-xl">
+                  Total Price : ${totalPrice.toFixed(2)}
+                </p>
+                <button
+                  onClick={() => handleSort("price")}
+                  className="p-3 btn border-2 rounded-full hover:bg-purple-600 hover:text-white border-purple-600 text-purple-600 flex items-center gap-3 font-semibold "
+                >
+                  Sort By Price <FaSortNumericDownAlt />
                 </button>
-                <button className="p-3 btn border-2 rounded-full bg-purple-600 text-white border-purple-600  ">
+                <button
+                  onClick={handlePurchase}
+                  disabled={gadget.length === 0}
+                  className="p-3 btn border-2 rounded-full bg-purple-600 text-white border-purple-600  "
+                >
                   Purchase
                 </button>
               </div>
@@ -168,6 +196,26 @@ const Dashboard = () => {
           </div>
         )}
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col justify-center items-center space-y-3">
+            <img src={modalImg} alt="" />
+            <h2 className="text-2xl font-bold">Payment Successfully</h2>
+            <hr className="border border-gray-200 w-full " />
+            <p className=" text-gray-500">Thank For Purchasing.</p>
+            <p className="text-gray-500">Price : ${modalTotalPrice}</p>
+            <div className="flex w-full mt-6">
+              <button
+                onClick={handleCloseModal}
+                className="btn w-full bg-purple-600 text-white rounded-full px-4 py-2"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
