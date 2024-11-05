@@ -27,7 +27,7 @@ const Gadgets = () => {
     <div className="my-6">
         <div className="flex justify-between py-4">
               <div>
-                <p className="font-bold text-xl">Cart</p>
+                <p className="font-bold text-xl">All Gadgets</p>
               </div>
               <div className="flex items-center gap-3">
                 

@@ -7,7 +7,7 @@ import {
 } from "../utils";
 import { CiCircleRemove } from "react-icons/ci";
 import { FaSortNumericDownAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("cart");
