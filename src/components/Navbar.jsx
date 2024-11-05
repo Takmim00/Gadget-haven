@@ -78,18 +78,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <p className="relative bg-white p-3 border rounded-full text-xl btn">
+          <p className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
             <TiShoppingCart />
             {cartCount > 0 && (
-            <span className="absolute top-0 right-0 bg-red-600 text-white rounded-full px-2 py-1 text-xs">
+            <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
               {cartCount}
             </span>
           )}
           </p>
-          <p className="relative bg-white p-3 border rounded-full text-xl btn">
+          <p className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
             <GiSelfLove />           
           {wishCount > 0 && (
-            <span className="absolute top-0 right-0 bg-red-600 text-white rounded-full px-2 py-1 text-xs">
+            <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
               {wishCount}
             </span>
           )}
