@@ -56,7 +56,7 @@ const Details = () => {
           </div>
           <div className="space-y-4 ">
             <h2 className="text-3xl font-semibold">{product_title}</h2>
-            <p className="font-medium text-xl ">By : {price}</p>
+            <p className="font-medium text-xl ">Price : $ {price}</p>
             <div>
               <span
                 className={`font-semibold border p-2 ${
@@ -123,7 +123,7 @@ const Details = () => {
               <button
               disabled={wishes}
                 onClick={() => handleAddWish(gadgets)}
-                className="btn rounded-full bg-white shadow text-xl"
+                className="btn rounded-full  bg-white shadow text-xl"
               >
                 <GiSelfLove/>
               </button>

@@ -13,7 +13,7 @@ const Card = ({ gadget }) => {
       </figure>
       <div className="card-body space-y-2">
         <h2 className="card-title">{product_title}</h2>
-        <p className="text-gray-500">Price : {price}k</p>
+        <p className="text-gray-500">Price :$ {price}k</p>
         <div>
           <Link
             to={`/details/${id}`}
