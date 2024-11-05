@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { getAllCart } from "../utils";
+import {
+  getAllCart,
+  getAllWishlist,
+  removeFromCart,
+  removeFromWishlist,
+} from "../utils";
 import { CiCircleRemove } from "react-icons/ci";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("cart");
 
   const [gadget, setGadget] = useState([]);
+  const [wish, setWish] = useState([]);
   useEffect(() => {
     const gadgets = getAllCart();
     setGadget(gadgets);
   }, []);
+  useEffect(() => {
+    const wishes = getAllWishlist();
+    setWish(wishes);
+  }, []);
+  const handleRemoveCart = (id) => {
+    removeFromCart(id);
+    setGadget(getAllCart());
+  };
+  const handleRemoveWish = (id) => {
+    removeFromWishlist(id);
+    setWish(getAllWishlist());
+  };
 
   return (
     <div>
@@ -48,7 +66,7 @@ const Dashboard = () => {
       {/* Display Items Based on Active Tab */}
       <div className="">
         {activeTab === "cart" ? (
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <div className="flex justify-between py-4">
               <div>
                 <p>Cart</p>
@@ -63,9 +81,9 @@ const Dashboard = () => {
                 </button>
               </div>
             </div>
-            <div>
+            <div className="space-y-4 ">
               {gadget.map((items, idx) => (
-                <div key={idx} className="p-6 border-2 rounded-2xl ">
+                <div key={idx} className="p-6 bg-white border-2 rounded-2xl ">
                   <div className="grid grid-cols-2   justify-evenly">
                     <div className="flex gap-4">
                       <img
@@ -74,14 +92,19 @@ const Dashboard = () => {
                         alt=""
                       />
                       <div className="items-center space-y-3">
-                        <h2 className="font-semibold text-2xl">{items.product_title}</h2>
+                        <h2 className="font-semibold text-2xl">
+                          {items.product_title}
+                        </h2>
                         <p className="text-gray-400">{items.description}</p>
                         <p className="text-xl">Price : ${items.price}</p>
                       </div>
                     </div>
                     <div className="grid justify-end">
-                      <button className="text-5xl">
-                        <CiCircleRemove/>
+                      <button
+                        onClick={() => handleRemoveCart(items.id)}
+                        className="text-5xl"
+                      >
+                        <CiCircleRemove />
                       </button>
                     </div>
                   </div>
@@ -90,8 +113,40 @@ const Dashboard = () => {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            wishlist
+          <div className="flex flex-col">
+            <div>
+              <p>WishList</p>
+            </div>
+            <div className="space-y-4 ">
+              {wish.map((items, idx) => (
+                <div key={idx} className="p-6 bg-white border-2 rounded-2xl ">
+                  <div className="grid grid-cols-2   justify-evenly">
+                    <div className="flex gap-4">
+                      <img
+                        className="h-44 w-56 rounded-xl object-cover"
+                        src={items.product_image}
+                        alt=""
+                      />
+                      <div className="items-center space-y-3">
+                        <h2 className="font-semibold text-2xl">
+                          {items.product_title}
+                        </h2>
+                        <p className="text-gray-400">{items.description}</p>
+                        <p className="text-xl">Price : ${items.price}</p>
+                      </div>
+                    </div>
+                    <div className="grid justify-end">
+                      <button
+                        onClick={() => handleRemoveWish(items.id)}
+                        className="text-5xl"
+                      >
+                        <CiCircleRemove />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

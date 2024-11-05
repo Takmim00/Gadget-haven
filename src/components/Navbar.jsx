@@ -1,8 +1,28 @@
 import { GiSelfLove } from "react-icons/gi";
 import { TiShoppingCart } from "react-icons/ti";
 import { Link, NavLink } from "react-router-dom";
+import { getAllCart, getAllWishlist } from "../utils";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  
+  const [cartCount, setCartCount] = useState(0);
+  const [wishCount, setWishCount] = useState(0);
+
+  useEffect(() => {
+    const updateCounts = () =>{
+
+      setCartCount(getAllCart().length);
+      setWishCount(getAllWishlist().length);
+    }
+    window.addEventListener('storage', updateCounts);
+  
+
+    updateCounts();
+    
+
+    return () => window.removeEventListener('storage', updateCounts);
+  }, []);
   return (
     <div className="">
       <div className="navbar w-11/12 mx-auto py-2">
@@ -58,11 +78,21 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <p className="bg-white p-3 border rounded-full text-xl btn">
+          <p className="relative bg-white p-3 border rounded-full text-xl btn">
             <TiShoppingCart />
+            {cartCount > 0 && (
+            <span className="absolute top-0 right-0 bg-red-600 text-white rounded-full px-2 py-1 text-xs">
+              {cartCount}
+            </span>
+          )}
           </p>
-          <p className="bg-white p-3 border rounded-full text-xl btn">
-            <GiSelfLove />
+          <p className="relative bg-white p-3 border rounded-full text-xl btn">
+            <GiSelfLove />           
+          {wishCount > 0 && (
+            <span className="absolute top-0 right-0 bg-red-600 text-white rounded-full px-2 py-1 text-xs">
+              {wishCount}
+            </span>
+          )}
           </p>
         </div>
       </div>

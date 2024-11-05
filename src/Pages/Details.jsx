@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { GiSelfLove } from "react-icons/gi";
-import { addToCart } from "../utils";
+import { addToCart, addToWist } from "../utils";
 
 
 const Details = () => {
@@ -19,13 +19,19 @@ const Details = () => {
     price,
     availability,
     description,
-    specification,
+    specification = [],
     rating
   } = gadgets;
   
   const handleAddCart = (gadgets)=>{
     addToCart(gadgets)
+    window.dispatchEvent(new Event('storage'));
 
+
+  }
+  const handleAddWish = (gadgets)=>{
+    addToWist(gadgets)
+    window.dispatchEvent(new Event('storage')); 
   }
   return (
     <div className="flex flex-col  bg-purple-600 pb-44  rounded-2xl text-white  relative mb-96 ">
@@ -57,13 +63,13 @@ const Details = () => {
             </div>
             <p>{description}</p>
             <p>Specification : </p>
-            {/* <div>
-                <ul>
+            <div>
+                <ul className="list-decimal ml-4">
                     {
                         specification.map(tags=><li>{tags}</li>)
                     }
                 </ul>
-            </div> */}
+            </div>
             
             <p>Rating : </p>
             <div className="card-actions items-center justify-between">
@@ -108,7 +114,7 @@ const Details = () => {
                 Add To Cart <MdOutlineAddShoppingCart/>
               </button>
               <button
-                onClick={() => handleAddToWishList(bookId)}
+                onClick={() => handleAddWish(gadgets)}
                 className="btn rounded-full bg-white shadow text-xl"
               >
                 <GiSelfLove/>
