@@ -5,6 +5,7 @@ import Statistics from "../Pages/Statistics";
 import Dashboard from "../Pages/Dashboard";
 import CategoryCard from "../components/CategoryCard";
 import Details from "../Pages/Details";
+import Gadgets from "../Pages/Gadgets";
 
 
 
@@ -48,7 +49,13 @@ const routes = createBrowserRouter([
         },
         {
           path:'/statistics',
-          element:<Statistics/>
+          element:<Statistics/>,
+          loader: ()=> fetch('../gadgets.json')
+      },
+      {
+        path:'/gadgets',
+        element:<Gadgets/>,
+        loader: ()=> fetch('../gadgets.json')
       }
         
     ]

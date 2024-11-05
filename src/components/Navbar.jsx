@@ -5,23 +5,19 @@ import { getAllCart, getAllWishlist } from "../utils";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  
   const [cartCount, setCartCount] = useState(0);
   const [wishCount, setWishCount] = useState(0);
 
   useEffect(() => {
-    const updateCounts = () =>{
-
+    const updateCounts = () => {
       setCartCount(getAllCart().length);
       setWishCount(getAllWishlist().length);
-    }
-    window.addEventListener('storage', updateCounts);
-  
+    };
+    window.addEventListener("storage", updateCounts);
 
     updateCounts();
-    
 
-    return () => window.removeEventListener('storage', updateCounts);
+    return () => window.removeEventListener("storage", updateCounts);
   }, []);
   return (
     <div className="">
@@ -51,12 +47,14 @@ const Navbar = () => {
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
-
+              <li>
+                <NavLink to="/statistics">Statistics</NavLink>
+              </li>
               <li>
                 <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
               <li>
-                <NavLink to="/statistics">Statistics</NavLink>
+                <NavLink to="/gadgets">Gadgets</NavLink>
               </li>
             </ul>
           </div>
@@ -70,10 +68,13 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
+              <NavLink to="/statistics">Statistics</NavLink>
+            </li>
+            <li>
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
             <li>
-              <NavLink to="/statistics">Statistics</NavLink>
+              <NavLink to="/gadgets">Gadgets</NavLink>
             </li>
           </ul>
         </div>
@@ -81,18 +82,18 @@ const Navbar = () => {
           <p className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
             <TiShoppingCart />
             {cartCount > 0 && (
-            <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
-              {cartCount}
-            </span>
-          )}
+              <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
+                {cartCount}
+              </span>
+            )}
           </p>
           <p className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
-            <GiSelfLove />           
-          {wishCount > 0 && (
-            <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
-              {wishCount}
-            </span>
-          )}
+            <GiSelfLove />
+            {wishCount > 0 && (
+              <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
+                {wishCount}
+              </span>
+            )}
           </p>
         </div>
       </div>
