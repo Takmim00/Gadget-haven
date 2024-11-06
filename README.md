@@ -4,7 +4,7 @@
 
 ## Attach Requirement Document Link
 
-- Document link :https://github.com/.../blob/main/Batch-10_Assignment-08.pdf
+- Document link :https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf
 
 ## List of React Fundamental concepts used in the project
 

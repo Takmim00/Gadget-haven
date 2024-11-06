@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { GiSelfLove } from "react-icons/gi";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { useLoaderData, useParams } from "react-router-dom";
 import { addToCart, addToWist, getAllWishlist } from "../utils";
 import { TabTitle } from "../utils/tab";
 
-
 const Details = () => {
-  TabTitle('Details || Gadget Heaven')
+  TabTitle("Details || Gadget Heaven");
   const data = useLoaderData();
   const { id } = useParams();
   const [gadgets, setGadgets] = useState({});
-  const [wishes, SetIsWishes] = useState(false)
+  const [wishes, SetIsWishes] = useState(false);
   useEffect(() => {
     const singleData = data.find((gadget) => gadget.id == id);
     setGadgets(singleData || {});
-    const wish = getAllWishlist()
-    const isExist = wish.find(item => item.id == singleData.id)
+    const wish = getAllWishlist();
+    const isExist = wish.find((item) => item.id == singleData.id);
     if (isExist) {
-      SetIsWishes(true)
+      SetIsWishes(true);
     }
   }, []);
   const {
@@ -28,20 +27,18 @@ const Details = () => {
     availability,
     description,
     specification = [],
-    rating
+    rating,
   } = gadgets;
-  
-  const handleAddCart = (gadgets)=>{
-    addToCart(gadgets)
-    window.dispatchEvent(new Event('storage'));
 
-
-  }
-  const handleAddWish = (gadgets)=>{
-    addToWist(gadgets)
-    SetIsWishes(true)
-    window.dispatchEvent(new Event('storage')); 
-  }
+  const handleAddCart = (gadgets) => {
+    addToCart(gadgets);
+    window.dispatchEvent(new Event("storage"));
+  };
+  const handleAddWish = (gadgets) => {
+    addToWist(gadgets);
+    SetIsWishes(true);
+    window.dispatchEvent(new Event("storage"));
+  };
   return (
     <div className="flex flex-col  bg-purple-600 pb-44  rounded-2xl text-white  relative mb-96 ">
       <div className="space-y-4 pt-16 mb-28">
@@ -52,7 +49,7 @@ const Details = () => {
         </p>
       </div>
       <div className="absolute top-56 left-48 backdrop-blur-xl w-9/12 ">
-        <div class=" flex flex-col lg:flex-row gap-8 bg-white text-black rounded-2xl p-6">
+        <div className=" flex flex-col lg:flex-row gap-8 bg-white text-black rounded-2xl p-6">
           <div className="px-5 py-5 bg-[#F3F3F3] items-center rounded-xl">
             <img src={product_image} class="max-w-sm h-full object-cover" />
           </div>
@@ -73,61 +70,61 @@ const Details = () => {
             <p>{description}</p>
             <p>Specification : </p>
             <div>
-                <ul className="list-decimal ml-4">
-                    {
-                        specification.map(tags=><li>{tags}</li>)
-                    }
-                </ul>
+              <ul className="list-decimal ml-4">
+                {specification.map((tags, idx) => (
+                  <li key={idx}>{tags}</li>
+                ))}
+              </ul>
             </div>
-            
+
             <p>Rating : </p>
             <div className="card-actions items-center justify-between">
               <div className="rating">
                 <input
                   type="radio"
                   name="rating-5"
-                  className="mask mask-star-2 bg-yellow-500"
+                  className="mask mask-star-2 bg-purple-600"
                 />
                 <input
                   type="radio"
                   name="rating-5"
-                  className="mask mask-star-2 bg-yellow-500"
+                  className="mask mask-star-2 bg-purple-600"
                   defaultChecked
                 />
                 <input
                   type="radio"
                   name="rating-5"
-                  className="mask mask-star-2 bg-yellow-500"
+                  className="mask mask-star-2 bg-purple-600"
                 />
                 <input
                   type="radio"
                   name="rating-5"
-                  className="mask mask-star-2 bg-yellow-500"
+                  className="mask mask-star-2 bg-purple-600"
                 />
                 <input
                   type="radio"
                   name="rating-5"
-                  className="mask mask-star-2 bg-yellow-500"
+                  className="mask mask-star-2 bg-purple-600"
                 />
-                <p className="py-1 px-4 border rounded-full bg-gray-200">{rating}</p>
+                <p className="py-1 px-4 border rounded-full bg-gray-200">
+                  {rating}
+                </p>
               </div>
-
             </div>
-
 
             <div className="flex gap-6">
               <button
                 onClick={() => handleAddCart(gadgets)}
                 className="btn bg-purple-600 text-white rounded-full font-bold"
               >
-                Add To Cart <MdOutlineAddShoppingCart/>
+                Add To Cart <MdOutlineAddShoppingCart />
               </button>
               <button
-              disabled={wishes}
+                disabled={wishes}
                 onClick={() => handleAddWish(gadgets)}
                 className="btn rounded-full  bg-white shadow text-xl"
               >
-                <GiSelfLove/>
+                <GiSelfLove />
               </button>
             </div>
           </div>
