@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import { FaSortNumericDownAlt } from 'react-icons/fa';
+import { TabTitle } from '../utils/tab';
 
 const Gadgets = () => {
+  TabTitle('Gadgets || Gadget Heaven')
     const data = useLoaderData();
   const { category } = useParams();
   const [categories, setCategories] = useState([]);
@@ -24,6 +26,7 @@ const Gadgets = () => {
     }
   }, [category, data]);
   return (
+
     <div className="my-6">
         <div className="flex justify-between py-4">
               <div>

@@ -11,8 +11,10 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import modalImg from "../assets/Group.png";
+import { TabTitle } from "../utils/tab";
 
 const Dashboard = () => {
+  TabTitle('Dashboard || Gadget Heaven')
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("cart");
 

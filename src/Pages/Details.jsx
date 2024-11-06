@@ -3,9 +3,11 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { GiSelfLove } from "react-icons/gi";
 import { addToCart, addToWist, getAllWishlist } from "../utils";
+import { TabTitle } from "../utils/tab";
 
 
 const Details = () => {
+  TabTitle('Details || Gadget Heaven')
   const data = useLoaderData();
   const { id } = useParams();
   const [gadgets, setGadgets] = useState({});
