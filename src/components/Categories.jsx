@@ -9,7 +9,7 @@ const Categories = ({categories}) => {
         <Link to='/'  className="btn w-full  rounded-full bg-purple-600">All products</Link>
         {
             categories.map(category=>(
-                <Link to={`/category/${category.category}`} key={category.id} className="btn w-full  rounded-full bg-purple-600">{category.category}</Link>
+                <Link to={`/category/${category.category}`} key={category.id} className="btn w-full  rounded-full bg-purple-600 text-white">{category.category}</Link>
             ))
         }
         </div>
