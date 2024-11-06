@@ -6,6 +6,7 @@ import Dashboard from "../Pages/Dashboard";
 import CategoryCard from "../components/CategoryCard";
 import Details from "../Pages/Details";
 import Gadgets from "../Pages/Gadgets";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 
@@ -13,6 +14,7 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout/>,
+    errorElement: <ErrorPage/>,
     children:[
         {
             path:'/',

@@ -1,12 +1,16 @@
 import { GiSelfLove } from "react-icons/gi";
 import { TiShoppingCart } from "react-icons/ti";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { getAllCart, getAllWishlist } from "../utils";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
   const [wishCount, setWishCount] = useState(0);
+  const location = useLocation();
+
+
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const updateCounts = () => {
@@ -21,7 +25,7 @@ const Navbar = () => {
   }, []);
   return (
     <div className="">
-      <div className="navbar py-2">
+      <div className={`navbar py-2 ${isHome ? 'text-white' : 'text-purple-600'}`}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -58,43 +62,43 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link className=" text-xl" to="/">
+          <Link className=" text-xl font-bold" to="/">
             Gadget Heaven
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/" className='font-bold'>Home</NavLink>
             </li>
             <li>
-              <NavLink to="/statistics">Statistics</NavLink>
+              <NavLink to="/statistics" className='font-bold'>Statistics</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/dashboard" className='font-bold'>Dashboard</NavLink>
             </li>
             <li>
-              <NavLink to="/gadgets">Gadgets</NavLink>
+              <NavLink to="/gadgets" className='font-bold'>Gadgets</NavLink>
             </li>
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <p className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
+          <Link className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
             <TiShoppingCart />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
                 {cartCount}
               </span>
             )}
-          </p>
-          <p className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
+          </Link>
+          <Link className="relative bg-white px-4 py-3 border rounded-full text-xl btn">
             <GiSelfLove />
             {wishCount > 0 && (
               <span className="absolute -top-2 -right-1 bg-white border text-black rounded-full px-2 py-1 text-xs">
                 {wishCount}
               </span>
             )}
-          </p>
+          </Link>
         </div>
       </div>
     </div>
