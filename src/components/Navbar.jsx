@@ -12,17 +12,18 @@ const Navbar = () => {
 
   const isHome = location.pathname === '/';
 
+  const updateCounts = () => {
+    setCartCount(getAllCart().length || 0);
+    setWishCount(getAllWishlist().length || 0);
+  };
   useEffect(() => {
-    const updateCounts = () => {
-      setCartCount(getAllCart().length);
-      setWishCount(getAllWishlist().length);
-    };
     window.addEventListener("storage", updateCounts);
 
     updateCounts();
 
     return () => window.removeEventListener("storage", updateCounts);
   }, []);
+
   return (
     <div className="">
       <div className={`navbar py-2 ${isHome ? 'text-white' : 'text-purple-600'}`}>
