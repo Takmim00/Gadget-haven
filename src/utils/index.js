@@ -39,13 +39,13 @@ const addToWist = (gadgets) => {
 const removeFromCart = (id) => {
   const cart = getAllCart().filter(item => item.id !== id);
   localStorage.setItem('addCart', JSON.stringify(cart));
-  toast.success('Item removed from cart');
+  toast.error('Item removed from cart');
 };
 
 const removeFromWishlist = (id) => {
   const wishlist = getAllWishlist().filter(item => item.id !== id);
   localStorage.setItem('addWish', JSON.stringify(wishlist));
-  toast.success('Item removed from wishlist');
+  toast.error('Item removed from wishlist');
 };
 
 
