@@ -21,7 +21,7 @@ Your go-to destination for the latest and greatest gadgets.
 **GadgetHeaven** is an e-commerce platform designed for gadget enthusiasts. It provides a seamless shopping experience with a structured navigation bar, product categories, and detailed product pages. The site ensures smooth performance with features like shopping carts, wishlists, and product filtering.  
 
 ## 🌍 Live Demo  
-🔗 [GadgetHeaven Live]([https://your-live-demo-link.com](https://gadgets-havens.netlify.app/)
+🔗 [GadgetHeaven Live](https://gadgets-havens.netlify.app/) 
 
 ## ✨ Features  
 - 🛒 **Shopping Cart** – Users can add/remove items.  
@@ -60,3 +60,4 @@ Your go-to destination for the latest and greatest gadgets.
 ## 🔧 Configuration  
 - Environment variables (if any) should be set in a `.env` file.  
 - Modify `config.js` for backend endpoints (if applicable).  
+
