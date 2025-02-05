@@ -1,7 +1,3 @@
-Sure! I've added a **Live Demo** section with a placeholder link. You can replace it with the actual deployed link. Here's the updated **README.md** file:
-
----
-
 # 📱 GadgetHeaven ✨  
 
 Your go-to destination for the latest and greatest gadgets.  
